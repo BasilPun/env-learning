@@ -50,7 +50,7 @@ int main()
             loadingJump = true;
 
             // increase jump_strength when held
-            jump_strength = jump_strength + 0.1;
+            jump_strength = jump_strength + 0.03;
 
             // limit
             if (jump_strength >= 4)
@@ -60,7 +60,7 @@ int main()
         }
 
         // count how long the button is pressed for
-        if (bn::keypad::a_released())
+        if (bn::keypad::a_released() && !jumping)
         {
             dy = dy - jump_strength;
 
